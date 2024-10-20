@@ -59,7 +59,3 @@ Most exercises and assignments have runnable sample code, so you can visually se
 
 Approach every week from top-to-bottom and do not move to the next assignment/exercise without fully understanding the previous.
 
-```bash
-git clone https://github.com/buwebdev/web-330.git
-cd web-330
-```
