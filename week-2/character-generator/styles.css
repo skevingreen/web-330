@@ -3,9 +3,41 @@
   Chapter 1
   Programming Assignment
 
-  Author:
-  Date:
-  Filename:
+  Author: Scott Green
+  Date: October 28, 2024
+  Filename: styles.css
 */
 
 /* Your CSS goes here */
+
+/* Use a gradient background that covers the entire page. */
+/* Provide a selection of fonts and make them bold. */
+body {
+  background: linear-gradient(aqua, white);
+  background-attachment: fixed;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: bold;
+}
+
+/* Put some space between the input form and the select button. */
+input {
+  margin-bottom: 1.25em;
+}
+
+/* Put some space between the buttons and other elements. */
+/* Change the background color of the select boxes to white to match the input box. */
+select {
+  margin-bottom: 1.25em;
+  background-color: white;;
+}
+
+/* Give the button a green color and round the corners a bit to make it stand out. */
+button {
+  background-color: rgba(10, 216, 10, 0.562);
+  border-radius: 6px;
+}
+
+/* Apply a shadow to the generated character text to make it pop. */
+#shadow {
+  text-shadow:  2px 2px 2px red;
+}
