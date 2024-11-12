@@ -33,7 +33,6 @@ function initMap() {
   // Get the device's current position
   navigator.geolocation.getCurrentPosition(getPos, handleError);
 
-  // This did not work for me in Chrome, but it did in Safari after reloading
   function getPos(pos) {
     let myPosition = {
       lat: pos.coords.latitude,
