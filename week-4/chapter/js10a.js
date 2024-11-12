@@ -36,8 +36,8 @@ function setupRoom() {
 
   // Add tables from storage to the banquet hall
   for (let items of storageTables) {
-    items.onclick = function() {
-      let storageCopy  = items.cloneNode(true);
+    items.onclick = function () {
+      let storageCopy = items.cloneNode(true);
       room.appendChild(storageCopy);
 
       zIndexCounter++;
@@ -46,26 +46,32 @@ function setupRoom() {
       countSeats();
 
       // Grab the table in response to the pointerdown event
-      storageCopy.addEventListener("pointerdown", grabTable);
-    }
+      storageCopy.addEventListener('pointerdown', grabTable);
+    };
   }
 
   // Grab a table from the banquet hall to begin drag and drop
   function grabTable(e) {
-    startingX = e.clientX;
-    startingY = e.clientY;
-    e.target.style.touchAction = "none";
-    zIndexCounter++;
-    e.target.style.zIndex = zIndexCounter;
+    if (e.shiftKey) {
+      // Remove the table from the room
+      e.target.parentElement.removeChild(e.target);
+      countSeats();
+    } else {
+      startingX = e.clientX;
+      startingY = e.clientY;
+      e.target.style.touchAction = 'none';
+      zIndexCounter++;
+      e.target.style.zIndex = zIndexCounter;
 
-    tableX = e.target.offsetLeft;
-    tableY = e.target.offsetTop;
+      tableX = e.target.offsetLeft;
+      tableY = e.target.offsetTop;
 
-    e.target.addEventListener("pointermove", moveTable);
-    e.target.addEventListener("pointerup", dropTable);
+      e.target.addEventListener('pointermove', moveTable);
+      e.target.addEventListener('pointerup', dropTable);
+    }
   }
 
-  // On macOS Sequoia 15.1...seems to work ok only in Safari (not Firefox or Chrome, didn't try others)
+  // On macOS Sequoia 15.1...seems to work ok only in Safari (not Firefox or Chrome; didn't try others)
   // Move the table along with the pointer
   function moveTable(e) {
     let currentX = e.clientX;
@@ -74,12 +80,12 @@ function setupRoom() {
     let deltaY = currentY - startingY;
 
     // Calculate the table's new position
-    e.target.style.left = tableX + deltaX + "px";
-    e.target.style.top = tableY + deltaY + "px";
+    e.target.style.left = tableX + deltaX + 'px';
+    e.target.style.top = tableY + deltaY + 'px';
   }
 
   function dropTable(e) {
-    e.target.removeEventListener("pointermove", moveTable);
-    e.target.removeEventListener("pointerup", dropTable);
+    e.target.removeEventListener('pointermove', moveTable);
+    e.target.removeEventListener('pointerup', dropTable);
   }
 }
