@@ -3,9 +3,24 @@
   Chapter 2
   Programming Assignment
 
-  Author:
-  Date:
-  Filename:
+  Author: Scott Green
+  Date: November 23, 2024
+  Filename: styles.css
 */
 
 /* Add your CSS styles here */
+
+/* Add some space below the input elements */
+input {
+  margin-bottom: 1.25em;
+}
+
+/* Add a centered image and Robot font */
+body {
+  background-image: url(restaurant.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 800px 800px;
+  font-family: "Roboto", sans-serif;
+}
