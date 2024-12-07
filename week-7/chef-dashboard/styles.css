@@ -3,9 +3,26 @@
   Chapter 3
   Programming Assignment
 
-  Author:
-  Date:
-  Filename:
+  Author: Scott Green
+  Date: December 6, 2024
+  Filename: styles.css
 */
 
 /* Add your CSS styles here */
+
+/* Give the headings a blue background with white Pacifico font */
+h2 {
+  background-color: blue;
+  color: white;
+  font-family: "Pacifico", cursive;
+}
+
+/* Make the background of the .chef-container class aqua
+.chef-container {
+  background-color: aqua;
+}
+
+/* Use Raleway font for paragraphs
+p {
+  font-family: "Raleway", sans-serif;
+}
